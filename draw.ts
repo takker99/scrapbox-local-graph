@@ -2,17 +2,19 @@
 /// <reference lib="esnext" />
 /// <reference lib="dom" />
 
-import { select } from "https://cdn.skypack.dev/d3-selection@v3.0.0?dts";
-import { D3ZoomEvent, zoom } from "https://cdn.skypack.dev/d3-zoom@v3.0.0?dts";
-import { D3DragEvent, drag } from "https://cdn.skypack.dev/d3-drag@v3.0.0?dts";
 import {
+  D3DragEvent,
+  D3ZoomEvent,
+  drag,
   forceCenter,
   forceLink,
   forceManyBody,
   forceSimulation,
+  select,
   SimulationLinkDatum,
   SimulationNodeDatum,
-} from "https://cdn.skypack.dev/d3-force@v3.0.0?dts";
+  zoom,
+} from "./deps/d3.ts";
 import { LinkData } from "./types.ts";
 import { Scrapbox, toTitleLc } from "./deps/scrapbox.ts";
 declare const scrapbox: Scrapbox;
