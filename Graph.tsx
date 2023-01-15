@@ -261,7 +261,7 @@ text, .link {
   );
 };
 
-const hoverStyle = (d: Node, opacity: number) => {
+const hoverStyle = (d: Node) => {
   const titleLc = CSS.escape(d.titleLc);
   return `.node:not([data-title="${titleLc}"]):not([data-targets*="\\"${titleLc}\\""]):not([data-sources*="\\"${titleLc}\\""]) {
   --graph-node-opacity-factor: 0.6;
@@ -337,8 +337,8 @@ const NodeComponent = (
   }, [isCurrent, node.titleLc]);
 
   const handleOver = useCallback(
-    () => changeCSS(hoverStyle(node, opacityScale)),
-    [changeCSS, node, opacityScale],
+    () => changeCSS(hoverStyle(node)),
+    [changeCSS, node],
   );
   const handleLeave = useCallback(() => changeCSS(""), [changeCSS]);
 
